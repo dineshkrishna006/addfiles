@@ -32,7 +32,7 @@ export function NavUser({
     const router = useRouter();
     const handleLogout = async () => {
         await signOut()
-        router.push("http://localhost:3000/login")
+        router.push("https://addfiles.vercel.app/login")
     }
 
     return (

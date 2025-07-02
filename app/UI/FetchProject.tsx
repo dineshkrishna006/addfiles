@@ -39,7 +39,7 @@ function FetchProject() {
             <button
               key={project._id}
               onClick={() => handleRedirect(project._id)}
-              className="border-gray-400 border-[1px] w-[17vw] gap-2 h-[15vh] flex justify-center items-center rounded-lg"
+              className="border-gray-400 border-[1px] w-[25vw] p-2 gap-4 h-[15vh] flex justify-center items-center rounded-lg"
             >
               <div className='w-[5vw] h-[10vh] bg-yellow-500 text-3xl flex items-center justify-center rounded-xl'>
                 {project?.name[0]}
