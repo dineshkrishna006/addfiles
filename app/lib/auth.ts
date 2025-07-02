@@ -15,8 +15,9 @@ export const authOptions: NextAuthOptions = {
             password: { label: "Password", type: "password" }
           },
           async authorize(credentials: any) {
+            console.log();
+            
             await connectToDatabase();
-            // Do zod validation, OTP validation here
             const hashedPassword = await bcrypt.hash(credentials.password, 10);
             const existingUser = await User.findOne({
                 email: credentials.email
@@ -57,7 +58,6 @@ export const authOptions: NextAuthOptions = {
     secret: process.env.JWT_SECRET || "secret",
     callbacks: {
         async jwt({ token, user }) {
-            // Persist the user id to the token right after signin
             if (user) {
                 token.userId = user.id;
                 token.username = typeof user.name === "string" ? user.name : undefined;
@@ -65,12 +65,17 @@ export const authOptions: NextAuthOptions = {
             return token;
         },
         async session({ token, session }) {
-            // Send properties to the client
             if (token) {
                 session.user.id = token.sub as string;
                 session.user.username = token.username as string;
             }
             return session;
+        },
+        async redirect({ url, baseUrl }) {
+        return `${baseUrl}/dashboard`;
         }
-    }
+    },
+    pages:{
+        signIn:"/login"
+    },
 }

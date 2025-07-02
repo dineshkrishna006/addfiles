@@ -1,4 +1,8 @@
-import { Button } from "./Button";
+import Image from "next/image";
+// import { Button } from "./Button";
+import QuestLogo from '@/public/QuesLogo.png'
+import { Button } from "@/components/ui/button";
+import { Settings , Bell } from 'lucide-react';
 
 interface AppbarProps {
     user?: {
@@ -14,12 +18,18 @@ export const Appbar = ({
     onSignin,
     onSignout
 }: AppbarProps) => {
-    return <div className=" w-[100vw] h-[10vh] flex justify-between border-b px-4">
-        <div className="text-lg flex flex-col justify-center">
-            PayTM
+    return <div className=" w-[100vw] h-[10vh] flex justify-between px-[5vw]">
+        <div className="text-lg flex items-center justify-between">
+            <Image 
+                src={QuestLogo} 
+                alt="Image Here" 
+                className=" w-[10vw] "
+            />
         </div>
-        <div className="flex flex-col justify-center pt-2">
-            <Button onClick={user ? onSignout : onSignin}>{user ? "Logout" : "Login"}</Button>
+        <div className=" w-[10vw] h-full flex items-center justify-evenly pt-2">
+            {/* <Button onClick={user ? onSignout : onSignin}>{user ? "Logout" : "Login"}</Button> */}
+            <div > <Settings /> </div>
+            <div> <Bell /> </div>
         </div>
     </div>
 }

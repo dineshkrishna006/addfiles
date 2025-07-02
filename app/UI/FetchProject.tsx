@@ -18,6 +18,7 @@ function FetchProject() {
       try {
         const res = await axios.get('/api/projects')
         setProjects(res.data)
+        
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
@@ -38,14 +39,14 @@ function FetchProject() {
             <button
               key={project._id}
               onClick={() => handleRedirect(project._id)}
-              className="border w-[25vw] p-2 gap-3 h-[15vh] flex justify-center items-center rounded-lg hover:bg-blue-500 transition"
+              className="border-gray-400 border-[1px] w-[17vw] gap-2 h-[15vh] flex justify-center items-center rounded-lg"
             >
-              <div className='w-[5vw] h-[10vh] text-3xl flex items-center justify-center rounded-xl'>
+              <div className='w-[5vw] h-[10vh] bg-yellow-500 text-3xl flex items-center justify-center rounded-xl'>
                 {project?.name[0]}
               </div>
-              <div>
-                <div className="font-bold">Project Name: {project?.name}</div>
-                <div>Description: {project?.description}</div>
+              <div className=' flex flex-col justify-end ' >
+                <div className="font-bold"> {project?.name}</div>
+                <div>X Files </div>
               </div>
             </button>
           ))}

@@ -31,7 +31,7 @@ function NavLink() {
         <BreadcrumbItem>
           <BreadcrumbLink
             href="/dashboard"
-            className="hover:text-[#000] text-[#808080] font-bold tracking-wider duration-300"
+            className="hover:text-[#7E22CE] text-[#808080] font-bold tracking-wider duration-300"
           >
             Dashboard
           </BreadcrumbLink>
@@ -42,7 +42,7 @@ function NavLink() {
           <BreadcrumbLink
             asChild
             href="/dashboard/projects"
-            className="hover:text-[#000] text-[#808080] font-bold tracking-wider duration-300"
+            className="hover:text-[#7E22CE] text-[#808080] font-bold tracking-wider duration-300"
           >
             <div className=" cursor-pointer " onClick={() => { router.push('/dashboard/projects') }} >Projects</div>
           </BreadcrumbLink>
@@ -52,7 +52,7 @@ function NavLink() {
         <BreadcrumbItem>
           <BreadcrumbLink
             asChild
-            className="hover:text-[#000] text-[#808080] font-bold tracking-wider duration-300"
+            className="hover:text-[#7E22CE] text-[#808080] font-bold tracking-wider duration-300"
           >
             <Link href={`/dashboard/projects/${projectId}/${slug || "#"}`}>
               {pageTitle}
