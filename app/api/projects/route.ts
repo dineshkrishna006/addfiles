@@ -18,6 +18,7 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+
   const session = await getServerSession(authOptions);
 
   if (!session || !session.user) {
@@ -27,11 +28,17 @@ export async function POST(req: Request) {
   const body = await req.json();
 
   await connectToDatabase();
-  const newProject = await Project.create({
-    name: body.name,
-    description: body.description,
-    owner: session.user.id,
-  });
-
-  return NextResponse.json(newProject, { status: 201 });
+  console.log(body.name , session.user.id);
+  
+  try {
+    
+    const newProject = await Project.create({
+      name: body.name,
+      owner: session.user.id,
+    });
+  
+    return NextResponse.json(newProject, { status: 201 });
+  } catch(error) {
+    console.error("Can't create Project" , error)
+  }
 }

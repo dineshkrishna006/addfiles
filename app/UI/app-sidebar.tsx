@@ -80,9 +80,9 @@ export function AppSidebar() {
                           href={`/dashboard/projects/${projectId}/${item.slug}`}
                           className={`flex items-center gap-2 px-2 py-2 rounded-md w-full transition-colors duration-200 ${
                             isActive
-                              ? "bg-muted text-foreground"
-                              : "text-muted-foreground"
-                          }`}
+                              ? "bg-[#d9c5ebfb] text-[#7E22CE] "
+                              : "text-muted-foreground "
+                          } `}
                         >
                           <item.icon />
                           <span className="text-[1.13vw] font-bold">

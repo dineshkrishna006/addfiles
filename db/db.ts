@@ -14,7 +14,6 @@ const userSchema = new Schema({
 // 2. Project Schema
 const projectSchema = new Schema({
   name: { type: String, required: true },
-  description: { type: String, required: true },
   owner: { type: ObjectId, ref: "User", required: true },
   createdAt: { type: Date, default: Date.now },
 });

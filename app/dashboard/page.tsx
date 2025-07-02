@@ -25,18 +25,18 @@ export default async function Page() {
   return (
     <div className={ clsx( 
       'w-[100vw] h-[100vh] flex flex-col items-center' ,
-      ' sm:bg-blue-400' ,
+      '' ,
       ' xl:w-full xl:h-[100vh]' ,
       ' md:w-full md:h-[100vh]' ,
       ' lg:w-full lg:h-[100vh]' ,
      )} >
       <AppbarClient />
       <div className={ clsx( 
-        ' w-full h-[6vh] text-3xl text-white font-extrabold flex items-center justify-center ' ,
+        ' w-full h-[6vh] text-5xl mt-6 text-[#7E22CE] font-extrabold flex items-center justify-center ' ,
         ' sm:text-5xl ' ,
         ' md:text-4xl ' ,
         ' lg:text-5xl ' ,
-        ' xl:text-4xl xl:h-[7vh] ' ,
+        ' xl:text-5xl  ' ,
        ) } > Create a Project </div>
       <div className={ clsx( ' w-[90%] h-[40vh] flex flex-col items-center justify-evenly ' , 
          ' sm:w-[80%] sm:h-[40vh] ' ,
@@ -47,7 +47,7 @@ export default async function Page() {
           <Image src={DashboardLogo} className= { clsx( ' w-[70vw] h-[20vh] ' , 
             ' md:h-[20vh] md:w-[40vw] ' ,
             ' lg:h-[20vh] lg:w-[40vw] ' ,
-            ' xl:h-[30vh] xl:w-[25vw] ' ,
+            ' xl:h-[35vh] xl:w-[25vw] ' ,
           )} alt="Dashboard Logo" />
           <p className= { clsx( ' w-[95%] text-center ' ) } >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, dolore. Autem eius, sed unde deserunt suscipit, labore hic, dignissimos minima dicta ducimus repudiandae obcaecati impedit architecto voluptate doloribus quas illum!</p>
       </div>

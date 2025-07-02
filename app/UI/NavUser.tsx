@@ -1,7 +1,5 @@
 "use client";
-
 import { ArrowRight, CreditCard, LogOut, Settings, UserCircle } from "lucide-react";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
     DropdownMenu,
@@ -19,6 +17,8 @@ import {
     useSidebar,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export function NavUser({
     user,
@@ -29,6 +29,11 @@ export function NavUser({
     };
 }) {
     const { isMobile } = useSidebar();
+    const router = useRouter();
+    const handleLogout = async () => {
+        await signOut()
+        router.push("http://localhost:3000/login")
+    }
 
     return (
         <SidebarMenu>
@@ -91,7 +96,7 @@ export function NavUser({
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
                             <LogOut />
-                            <Button variant="outline" type="button">
+                            <Button onClick={() => handleLogout()} variant="outline" type="button">
                                 Log out
                             </Button>
                         </DropdownMenuItem>
